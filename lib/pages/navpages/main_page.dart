@@ -3,6 +3,7 @@ import 'genre_page.dart';
 import 'home_page.dart';
 import 'member_page.dart';
 import 'profile_page.dart';
+import '../BookList_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,7 +13,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List pages = [HomePage(), GenrePage(), MemberPage(), ProfilePage()];
+  List pages = [
+    HomePage(),
+    GenrePage(),
+    MemberPage(),
+    ProfilePage(),
+    BookListPage()
+  ];
   int currentIndex = 0;
   void onTap(int index) {
     setState(() {
@@ -59,7 +66,8 @@ class _MainPageState extends State<MainPage> {
               BottomNavigationBarItem(
                   label: 'Member', icon: Icon(Icons.card_membership_rounded)),
               BottomNavigationBarItem(
-                  label: 'Profile', icon: Icon(Icons.person_rounded))
+                  label: 'Profile', icon: Icon(Icons.person_rounded)),
+              BottomNavigationBarItem(icon: Icon(Icons.book), label: 'booklist')
             ],
           ),
         ),
