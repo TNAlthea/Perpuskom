@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/navpages/main_page.dart';
+import 'splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized;
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Perpuskom',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage()
+      home: splash(),
+      // MainPage()
     );
   }
 }
@@ -34,7 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
