@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_grafik/grafik.dart';
+import 'package:account_reg/otp.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
-      ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -31,221 +27,58 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
+      backgroundColor: Color.fromARGB(255, 46, 46, 51),
       body: Container(
-        // color: Color.fromRGBO(255, 255, 255, 100),
         width: 1080,
         height: 1920,
         child: ListView(
-          children: <Widget>[
-            // selamat datang jumbotron
-            // singkatan
-            // carousel
-            // card buku
-
-            // jumlah by genre
+          children: [
+            // header lock
             Container(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'Jumlah Buku',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                ),
+              height: 200,
+              padding: EdgeInsets.fromLTRB(70.0, 0.0, 70.0, 0.0),
+              child: Image.asset(
+                'assets/lock.png',
               ),
             ),
-            // container utk grafik
+            // card profil
             Container(
-              width: 1080,
-              height: 1920,
-              // color: Colors.black,
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
+              height: 460,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: const Radius.circular(20.0),
+                    topRight: const Radius.circular(20.0),
+                  )),
+              child: ListView(
                 children: [
-                  //per genre
-
+// hyperlink lupa pass
                   Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
+                    padding: const EdgeInsets.fromLTRB(10.0, 30.0, 0, 10.0),
+                    child: Column(
                       children: [
                         Container(
-                          alignment: Alignment.center,
-                          width: 91,
+                          width: 350,
                           child: Text(
-                            'Teknologi',
+                            'Lupa Kata Sandi?',
+                            textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 15,
-                            ),
+                                color: Color.fromARGB(255, 46, 46, 51),
+                                fontSize: 23,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 512),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '512',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
-                      children: [
                         Container(
-                          alignment: Alignment.center,
-                          width: 91,
+                          width: 350,
+                          padding: EdgeInsets.fromLTRB(0.0, 5.0, 0, 0),
                           child: Text(
-                            'Sejarah',
+                            'Atur ulang Kata Sandi',
+                            textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 380),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '380',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 91,
-                          child: Text(
-                            'Sains',
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 240),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '240',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 91,
-                          child: Text(
-                            'Internasional',
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 380),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '380',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 91,
-                          child: Text(
-                            'Skripsi',
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 512),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '512',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 2, 15),
-                    child: Row(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 91,
-                          child: Text(
-                            'Jurnal Bercetak',
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
-                        CustomPaint(
-                          painter: Grafik(qtyBuku: 380),
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(24, 0, 0, 0),
-                            child: Text(
-                              '380',
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
+                              color: Color.fromARGB(255, 180, 84, 82),
                             ),
                           ),
                         ),
@@ -253,13 +86,187 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
 
-// batas
+                  // email
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.0, 10.0, 0, 0),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 350,
+                          padding:
+                              const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
+                          child: Text(
+                            'Email',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 180, 84, 82),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 45,
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.349),
+                                offset: Offset(0, 3),
+                                blurRadius: 3.5,
+                              )
+                            ],
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0),
+                            child: TextField(
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  // kata sandi baru
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.0, 20.0, 0, 0),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 350,
+                          padding:
+                              const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
+                          child: Text(
+                            'Kata Sandi Baru',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 180, 84, 82),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 45,
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.349),
+                                offset: Offset(0, 3),
+                                blurRadius: 3.5,
+                              )
+                            ],
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0),
+                            child: TextField(
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  // konfirm
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.0, 20.0, 0, 0),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 350,
+                          padding:
+                              const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
+                          child: Text(
+                            'Ketik Ulang Kata Sandi Baru',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 180, 84, 82),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 45,
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(0, 0, 0, 0.349),
+                                offset: Offset(0, 3),
+                                blurRadius: 3.5,
+                              )
+                            ],
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0),
+                            child: TextField(
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(29.0, 10.0, 29.0, 0.0),
+                    child: Text(
+                      'Gunakan kata sandi kuat yang belum pernah dipakai sebelumnya',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 157, 178, 206),
+                          fontSize: 13),
+                    ),
+                  ),
+
+                  // button selanjutnya
+                  Container(
+                    width: 350,
+                    padding: const EdgeInsets.fromLTRB(29.0, 0.0, 29.0, 0.0),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        _navToOTP(context);
+                      },
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 180, 84, 82),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                        ),
+                      ),
+                      child: Text(
+                        "Selanjutnya",
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w700,
+                            color: Color.fromARGB(255, 255, 255, 255)),
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
     );
+  }
+
+// fungsi navigasi button
+  void _navToOTP(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => OTPPage()));
   }
 }

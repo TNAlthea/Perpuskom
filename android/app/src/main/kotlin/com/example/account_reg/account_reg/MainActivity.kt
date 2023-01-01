@@ -1,4 +1,4 @@
-package com.example.tubes_grafik.tubes_grafik
+package com.example.account_reg.account_reg
 
 import io.flutter.embedding.android.FlutterActivity
 
