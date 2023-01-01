@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/pages/navpages/main_page.dart';
-import 'package:navbar_bottom/splash.dart';
+import 'pages/navpages/main_page.dart';
+import 'splash.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized;
   runApp(const MyApp());
 }
 

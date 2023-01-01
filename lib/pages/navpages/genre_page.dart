@@ -257,4 +257,3 @@ class GenrePageState extends State<GenrePage> {
       ),
     );
   }
-}

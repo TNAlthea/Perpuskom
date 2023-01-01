@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/pages/navpages/genre_page.dart';
-import 'package:navbar_bottom/pages/navpages/home_page.dart';
-import 'package:navbar_bottom/pages/navpages/member_page.dart';
-import 'package:navbar_bottom/pages/navpages/profile_page.dart';
+import 'genre_page.dart';
+import 'home_page.dart';
+import 'member_page.dart';
+import 'profile_page.dart';
+import '../BookList_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -14,16 +15,18 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List pages = [
     HomePage(),
-   GenrePage(),
-   MemberPage(),
-    ProfilePage()
+    GenrePage(),
+    MemberPage(),
+    ProfilePage(),
+    BookListPage()
   ];
-  int currentIndex=0;
-  void onTap(int index){
+  int currentIndex = 0;
+  void onTap(int index) {
     setState(() {
       currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,20 +53,25 @@ class _MainPageState extends State<MainPage> {
             backgroundColor: Colors.white,
             onTap: onTap,
             currentIndex: currentIndex,
-            selectedItemColor: Color(0xffB45452),
+            selectedItemColor: Colors.redAccent,
             unselectedItemColor: Colors.grey.withOpacity(0.5),
             showUnselectedLabels: false,
             showSelectedLabels: false,
             elevation: 10,
             items: [
-              BottomNavigationBarItem(label:'Home', icon: Icon(Icons.home_rounded)),
-              BottomNavigationBarItem(label:'Genre', icon: Icon(Icons.menu_book_rounded)),
-              BottomNavigationBarItem(label:'Member', icon: Icon(Icons.card_membership_rounded)),
-              BottomNavigationBarItem(label:'Profile', icon: Icon(Icons.person_rounded))
+              BottomNavigationBarItem(
+                  label: 'Home', icon: Icon(Icons.home_rounded)),
+              BottomNavigationBarItem(
+                  label: 'Genre', icon: Icon(Icons.menu_book_rounded)),
+              BottomNavigationBarItem(
+                  label: 'Member', icon: Icon(Icons.card_membership_rounded)),
+              BottomNavigationBarItem(
+                  label: 'Profile', icon: Icon(Icons.person_rounded)),
+              BottomNavigationBarItem(icon: Icon(Icons.book), label: 'booklist')
             ],
           ),
-    ),
-    ),
+        ),
+      ),
     );
   }
 }
