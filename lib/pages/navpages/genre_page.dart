@@ -49,206 +49,239 @@ class GenrePageState extends State<GenrePage> {
                           ),
                           child: Container(
                             color: Colors.white,
-                            padding: EdgeInsets.all(40),
+                            // padding: EdgeInsets.all(40),
                             child: ListView(
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
                               children: [
-                                Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.all(15),
-                                          height: 150,
-                                          width: 150,
-                                          padding: EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                              boxShadow: <BoxShadow> [
-                                                BoxShadow(
-                                                  color: Colors.grey.withOpacity(1),
-                                                  blurRadius: 10,
-                                                )
-                                              ]
+                                Container(
+                                  width: 500,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre1.jpg'),
+                                                  Text('Fiksi',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
                                           ),
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Image.asset('assets/genre1.jpg'),
-                                              Text('Fiksi',
-                                              style: const TextStyle(
-                                                color: Color(0xffB45452),
-                                                fontSize: 12.0,
-                                                fontWeight: FontWeight.bold,
-                                                  fontFamily: 'Public Sans',
-                                              ))
-                                            ],
-                                          )
-                                        ),
-                                        Container(
-                                            margin: EdgeInsets.all(15),
-                                            height: 150,
-                                            width: 150,
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                boxShadow: <BoxShadow> [
-                                                  BoxShadow(
-                                                    color: Colors.grey.withOpacity(1),
-                                                    blurRadius: 10,
-                                                  )
-                                                ]
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Image.asset('assets/genre2.jpg'),
-                                                Text('Jurnal Bercetak',
-                                                    style: const TextStyle(
-                                                      color: Color(0xffB45452),
-                                                      fontSize: 12.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontFamily: 'Public Sans',
-                                                    ))
-                                              ],
-                                            )
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                            margin: EdgeInsets.all(15),
-                                            height: 150,
-                                            width: 150,
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                boxShadow: <BoxShadow> [
-                                                  BoxShadow(
-                                                    color: Colors.grey.withOpacity(1),
-                                                    blurRadius: 10,
-                                                  )
-                                                ]
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Image.asset('assets/genre3.jpg'),
-                                                Text('Teknologi',
-                                                    style: const TextStyle(
-                                                      color: Color(0xffB45452),
-                                                      fontSize: 12.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontFamily: 'Public Sans',
-                                                    ))
-                                              ],
-                                            )
-                                        ),
-                                        Container(
-                                            margin: EdgeInsets.all(15),
-                                            height: 150,
-                                            width: 150,
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                boxShadow: <BoxShadow> [
-                                                  BoxShadow(
-                                                    color: Colors.grey.withOpacity(1),
-                                                    blurRadius: 10,
-                                                  )
-                                                ]
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Image.asset('assets/genre4.jpg'),
-                                                Text('Internasional',
-                                                    style: const TextStyle(
-                                                      color: Color(0xffB45452),
-                                                      fontSize: 12.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontFamily: 'Public Sans',
-                                                    ))
-                                              ],
-                                            )
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                            margin: EdgeInsets.all(15),
-                                            height: 150,
-                                            width: 150,
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                boxShadow: <BoxShadow> [
-                                                  BoxShadow(
-                                                    color: Colors.grey.withOpacity(1),
-                                                    blurRadius: 10,
-                                                  )
-                                                ]
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Image.asset('assets/genre5.jpg'),
-                                                Text('Ensiklopedia',
-                                                    style: const TextStyle(
-                                                      color: Color(0xffB45452),
-                                                      fontSize: 12.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontFamily: 'Public Sans',
-                                                    ))
-                                              ],
-                                            )
-                                        ),
-                                        Container(
-                                            margin: EdgeInsets.all(15),
-                                            height: 150,
-                                            width: 150,
-                                            padding: EdgeInsets.all(10),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                boxShadow: <BoxShadow> [
-                                                  BoxShadow(
-                                                    color: Colors.grey.withOpacity(1),
-                                                    blurRadius: 10,
-                                                  )
-                                                ]
-                                            ),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Image.asset('assets/genre6.jpg'),
-                                                Text('Skripsi',
-                                                    style: const TextStyle(
-                                                      color: Color(0xffB45452),
-                                                      fontSize: 12.0,
-                                                      fontWeight: FontWeight.bold,
-                                                      fontFamily: 'Public Sans',
-                                                    ))
-                                              ],
-                                            )
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre2.jpg'),
+                                                  Text('Jurnal Bercetak',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre3.jpg'),
+                                                  Text('Teknologi',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
+                                          ),
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre4.jpg'),
+                                                  Text('Internasional',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre5.jpg'),
+                                                  Text('Ensiklopedia',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
+                                          ),
+                                          Container(
+                                              margin: EdgeInsets.all(15),
+                                              height: 150,
+                                              width: 150,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(10.0)),
+                                                  boxShadow: <BoxShadow>[
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(1),
+                                                      blurRadius: 10,
+                                                    )
+                                                  ]
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceBetween,
+                                                children: [
+                                                  Image.asset(
+                                                      'assets/genre6.jpg'),
+                                                  Text('Skripsi',
+                                                      style: const TextStyle(
+                                                        color: Color(0xffB45452),
+                                                        fontSize: 12.0,
+                                                        fontWeight: FontWeight
+                                                            .bold,
+                                                        fontFamily: 'Public Sans',
+                                                      ))
+                                                ],
+                                              )
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -257,3 +290,4 @@ class GenrePageState extends State<GenrePage> {
       ),
     );
   }
+}
