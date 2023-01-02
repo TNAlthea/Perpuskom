@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'genre_page.dart';
 import 'home_page.dart';
 import 'member_page.dart';
-import 'profile_page.dart';
+import 'login_page.dart';
 import '../BookList_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     GenrePage(),
     MemberPage(),
-    ProfilePage(),
+    LoginPage(),
   ];
   int currentIndex = 0;
   void onTap(int index) {
