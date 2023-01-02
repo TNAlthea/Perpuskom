@@ -202,7 +202,7 @@ class MemberPageState extends State<MemberPage> {
                                                                     Container(
                                                                   padding: EdgeInsets.symmetric(
                                                                       horizontal:
-                                                                          20,
+                                                                          15,
                                                                       vertical:
                                                                           10),
                                                                   child: Text(

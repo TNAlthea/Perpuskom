@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'dart:io';
 import 'dart:async';
+import '../BookList_page.dart';
 
 class GenrePage extends StatefulWidget {
   const GenrePage({Key? key}) : super(key: key);
@@ -60,7 +61,7 @@ class GenrePageState extends State<GenrePage> {
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Container(
                                               margin: EdgeInsets.all(15),
@@ -69,33 +70,44 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                  ]),
+                                              child: InkWell(
+                                                  child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre1.jpg'),
                                                   Text('Fiksi',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              ),
+                                              onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  BookListPage()));
+                                    })),
                                           Container(
                                               margin: EdgeInsets.all(15),
                                               height: 150,
@@ -103,38 +115,41 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
+                                                  ]),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre2.jpg'),
                                                   Text('Jurnal Bercetak',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Container(
                                               margin: EdgeInsets.all(15),
@@ -143,33 +158,36 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
+                                                  ]),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre3.jpg'),
                                                   Text('Teknologi',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              )),
                                           Container(
                                               margin: EdgeInsets.all(15),
                                               height: 150,
@@ -177,38 +195,41 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
+                                                  ]),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre4.jpg'),
                                                   Text('Internasional',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Container(
                                               margin: EdgeInsets.all(15),
@@ -217,33 +238,36 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
+                                                  ]),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre5.jpg'),
                                                   Text('Ensiklopedia',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              )),
                                           Container(
                                               margin: EdgeInsets.all(15),
                                               height: 150,
@@ -251,33 +275,36 @@ class GenrePageState extends State<GenrePage> {
                                               padding: EdgeInsets.all(10),
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(10.0)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              10.0)),
                                                   boxShadow: <BoxShadow>[
                                                     BoxShadow(
                                                       color: Colors.grey
                                                           .withOpacity(1),
                                                       blurRadius: 10,
                                                     )
-                                                  ]
-                                              ),
+                                                  ]),
                                               child: Column(
-                                                mainAxisAlignment: MainAxisAlignment
-                                                    .spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Image.asset(
                                                       'assets/genre6.jpg'),
                                                   Text('Skripsi',
                                                       style: const TextStyle(
-                                                        color: Color(0xffB45452),
+                                                        color:
+                                                            Color(0xffB45452),
                                                         fontSize: 12.0,
-                                                        fontWeight: FontWeight
-                                                            .bold,
-                                                        fontFamily: 'Public Sans',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily:
+                                                            'Public Sans',
                                                       ))
                                                 ],
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
                                     ],

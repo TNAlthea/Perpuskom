@@ -18,7 +18,6 @@ class _MainPageState extends State<MainPage> {
     GenrePage(),
     MemberPage(),
     ProfilePage(),
-    BookListPage()
   ];
   int currentIndex = 0;
   void onTap(int index) {
@@ -67,7 +66,6 @@ class _MainPageState extends State<MainPage> {
                   label: 'Member', icon: Icon(Icons.card_membership_rounded)),
               BottomNavigationBarItem(
                   label: 'Profile', icon: Icon(Icons.person_rounded)),
-              BottomNavigationBarItem(icon: Icon(Icons.book), label: 'booklist')
             ],
           ),
         ),

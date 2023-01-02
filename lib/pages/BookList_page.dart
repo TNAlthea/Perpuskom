@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:perpuskom/pages/BookDetail_page.dart';
-import 'package:perpuskom/pages/navpages/main_page.dart';
+import 'package:navbar_bottom/pages/navpages/genre_page.dart';
+import 'BookDetail_page.dart';
+import 'navpages/main_page.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -57,7 +58,7 @@ class BookListPageState extends State<BookListPage> {
                         onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const MainPage()),
+                                  builder: (context) => const GenrePage()),
                             )),
                     Container(
                       width: MediaQuery.of(context).size.width * 1,
@@ -86,7 +87,7 @@ class BookListPageState extends State<BookListPage> {
                           )
                         : Expanded(
                             child: GridView.count(
-                              mainAxisSpacing: 10.0,
+                              mainAxisSpacing: 40.0,
                               crossAxisCount: 2,
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
@@ -110,7 +111,7 @@ class BookListPageState extends State<BookListPage> {
                                       ),
                                     ),
                                     subtitle: Container(
-                                      padding: EdgeInsets.all(10),
+                                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 5),
                                       child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,

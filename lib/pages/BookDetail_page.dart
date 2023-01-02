@@ -18,6 +18,17 @@ class _BookDetailPageState extends State<BookDetailPage>
     with SingleTickerProviderStateMixin {
   static const giantsClubColor = Color(0xffB45452);
 
+  int? selectedId;
+  String selectedName = "";
+  int selectedStatusPinjam = 0;
+  String selectedWaktuDipinjam = "";
+  String selectedWaktuDikembalikan = "";
+  int selectedTahunTerbit = 0;
+  String selectedSinopsis = "";
+  int selectedJumlahPeminjam = 0;
+  int selectedStok = 0;
+  String selectedAuthor = "";
+
   late TabController _tabController;
 
   @override
@@ -60,7 +71,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                       topRight: Radius.circular(30.0),
                     ),
                     child: Container(
-                        padding: EdgeInsets.only(top: 70, left: 30, right: 30),
+                        padding: EdgeInsets.only(top: 50, left: 30, right: 30),
                         color: Colors.white,
                         child: Column(
                           children: [
@@ -101,7 +112,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                                         children: [
                                           Container(
                                               padding: EdgeInsets.symmetric(
-                                                  vertical: 10),
+                                                  vertical: 5),
                                               child: Row(
                                                 children: [
                                                   Text('Tahun Terbit:'),
@@ -116,7 +127,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                                               )),
                                           Container(
                                               padding: EdgeInsets.symmetric(
-                                                  vertical: 10),
+                                                  vertical: 5),
                                               child: Row(
                                                 children: [
                                                   Text('Stok:'),
@@ -131,7 +142,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                                               )),
                                           Container(
                                               padding: EdgeInsets.symmetric(
-                                                  vertical: 10),
+                                                  vertical: 5),
                                               child: Row(
                                                 children: [
                                                   Text('Peminjam:'),
@@ -183,8 +194,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                                                         EdgeInsets.symmetric(
                                                             horizontal: 25,
                                                             vertical: 5),
-                                                    color:
-                                                        giantsClubColor,
+                                                    color: giantsClubColor,
                                                     child: Text(
                                                       'Sedang dipinjam',
                                                       textAlign: TextAlign.left,
@@ -221,20 +231,50 @@ class _BookDetailPageState extends State<BookDetailPage>
                 padding: EdgeInsets.all(20),
                 color: Colors.white,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    color: giantsClubColor,
-                    child: Text(
-                      'Pinjam',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    child: InkWell(
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        color: giantsClubColor,
+                        child: Text(
+                          'Pinjam',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      onTap: () async {
+                        selectedId = widget.daftarBuku.id;
+                        selectedName = widget.daftarBuku.name;
+                        selectedWaktuDipinjam = widget.daftarBuku.waktuDipinjam;
+                        selectedWaktuDikembalikan =
+                            widget.daftarBuku.waktuDikembalikan;
+                        selectedTahunTerbit = widget.daftarBuku.tahunTerbit;
+                        selectedSinopsis = widget.daftarBuku.sinopsis;
+                        selectedJumlahPeminjam =
+                            widget.daftarBuku.jumlahPeminjam;
+                        selectedStok = widget.daftarBuku.stok;
+                        selectedAuthor = widget.daftarBuku.author;
+
+                        widget.daftarBuku.statusPinjam == 1
+                            ? selectedStatusPinjam = 0
+                            : selectedStatusPinjam = 1;
+                        await DatabaseHelper.instance.update(listBuku(
+                            id: selectedId,
+                            name: selectedName,
+                            statusPinjam: selectedStatusPinjam,
+                            waktuDipinjam: selectedWaktuDipinjam,
+                            waktuDikembalikan: selectedWaktuDikembalikan,
+                            tahunTerbit: selectedTahunTerbit,
+                            sinopsis: selectedSinopsis,
+                            jumlahPeminjam: selectedJumlahPeminjam,
+                            stok: selectedStok,
+                            author: selectedAuthor));
+                        setState(() {});
+                      },
+                    )),
               )
             ]),
       ),
