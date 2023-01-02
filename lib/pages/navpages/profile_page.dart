@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/main.dart';
-import 'package:navbar_bottom/pages/navpages/home_page.dart';
-import 'package:navbar_bottom/pages/navpages/main_page.dart';
+import '../../main.dart';
+import 'home_page.dart';
+import 'main_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

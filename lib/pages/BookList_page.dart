@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/pages/navpages/genre_page.dart';
-import 'BookDetail_page.dart';
-import 'navpages/main_page.dart';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+
 import 'dart:io';
 import 'dart:async';
+
+import 'navpages/main_page.dart';
+import 'navpages/genre_page.dart';
+import 'BookDetail_page.dart';
+
+
 
 class BookListPage extends StatefulWidget {
   const BookListPage({Key? key}) : super(key: key);

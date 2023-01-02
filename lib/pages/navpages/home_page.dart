@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/pages/navpages/grafik.dart';
+import 'grafik.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 final List<String> imgList = [

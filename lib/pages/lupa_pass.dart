@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navbar_bottom/pages/otp.dart';
+import 'otp.dart';
 
 class LupaPassPage extends StatefulWidget {
   const LupaPassPage({super.key, required this.title});
