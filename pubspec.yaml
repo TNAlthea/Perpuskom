@@ -81,6 +81,9 @@ flutter:
     - assets/carousel/1.png
     - assets/carousel/2.png
     - assets/carousel/3.jfif
+    - assets/checked.png
+    - assets/mdi_book-clock-outline.png
+    - assets/BookCover.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

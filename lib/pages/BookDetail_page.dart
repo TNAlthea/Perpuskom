@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perpuskom/pages/konfirmasiPeminjaman_page.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -56,11 +57,7 @@ class _BookDetailPageState extends State<BookDetailPage>
                   padding: EdgeInsets.all(30),
                   decoration: BoxDecoration(color: giantsClubColor),
                   child: Container(
-                    child: Image.network(
-                      'https://picsum.photos/250?image=9',
-                      width: 200,
-                      height: 370,
-                    ),
+                    child: Image.asset('assets/BookCover.png', height: 350,)
                   )),
               Expanded(
                 child: Container(
@@ -227,55 +224,36 @@ class _BookDetailPageState extends State<BookDetailPage>
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(20),
-                color: Colors.white,
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
+              //apabila buku tersedia, tampilkan button pinjam
+              if (widget.daftarBuku.statusPinjam == 0)
+                Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.white,
                     child: InkWell(
-                      child: Container(
-                        padding: EdgeInsets.all(15),
-                        color: giantsClubColor,
-                        child: Text(
-                          'Pinjam',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          color: giantsClubColor,
+                          child: Text(
+                            'Pinjam',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
                       ),
-                      onTap: () async {
-                        selectedId = widget.daftarBuku.id;
-                        selectedName = widget.daftarBuku.name;
-                        selectedWaktuDipinjam = widget.daftarBuku.waktuDipinjam;
-                        selectedWaktuDikembalikan =
-                            widget.daftarBuku.waktuDikembalikan;
-                        selectedTahunTerbit = widget.daftarBuku.tahunTerbit;
-                        selectedSinopsis = widget.daftarBuku.sinopsis;
-                        selectedJumlahPeminjam =
-                            widget.daftarBuku.jumlahPeminjam;
-                        selectedStok = widget.daftarBuku.stok;
-                        selectedAuthor = widget.daftarBuku.author;
-
-                        widget.daftarBuku.statusPinjam == 1
-                            ? selectedStatusPinjam = 0
-                            : selectedStatusPinjam = 1;
-                        await DatabaseHelper.instance.update(listBuku(
-                            id: selectedId,
-                            name: selectedName,
-                            statusPinjam: selectedStatusPinjam,
-                            waktuDipinjam: selectedWaktuDipinjam,
-                            waktuDikembalikan: selectedWaktuDikembalikan,
-                            tahunTerbit: selectedTahunTerbit,
-                            sinopsis: selectedSinopsis,
-                            jumlahPeminjam: selectedJumlahPeminjam,
-                            stok: selectedStok,
-                            author: selectedAuthor));
-                        setState(() {});
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => KonfirmasiPeminjamanPage(
+                                      daftarBuku: widget.daftarBuku,
+                                    )));
                       },
                     )),
-              )
             ]),
       ),
     );

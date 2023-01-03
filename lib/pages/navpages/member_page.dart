@@ -75,11 +75,7 @@ class MemberPageState extends State<MemberPage> {
                                                 children: [
                                                   Expanded(
                                                     flex: 8,
-                                                    child: Image.network(
-                                                      'https://picsum.photos/250?image=9',
-                                                      width: 100,
-                                                      height: 170,
-                                                    ),
+                                                    child: Image.asset('assets/BookCover.png')
                                                   ),
                                                   Spacer(
                                                     flex: 1,

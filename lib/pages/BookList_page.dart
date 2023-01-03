@@ -11,8 +11,6 @@ import 'navpages/main_page.dart';
 import 'navpages/genre_page.dart';
 import 'BookDetail_page.dart';
 
-
-
 class BookListPage extends StatefulWidget {
   const BookListPage({Key? key}) : super(key: key);
   @override
@@ -92,7 +90,7 @@ class BookListPageState extends State<BookListPage> {
                           )
                         : Expanded(
                             child: GridView.count(
-                              mainAxisSpacing: 40.0,
+                              mainAxisSpacing: 60.0,
                               crossAxisCount: 2,
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
@@ -100,23 +98,20 @@ class BookListPageState extends State<BookListPage> {
                                 return Container(
                                   child: ListTile(
                                     title: Container(
-                                      decoration: BoxDecoration(boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.7),
-                                          spreadRadius: 0,
-                                          blurRadius: 13,
-                                          offset: Offset(3,
-                                              10), // changes position of shadow
-                                        )
-                                      ]),
-                                      child: Image.network(
-                                        'https://picsum.photos/250?image=9',
-                                        width: 100,
-                                        height: 170,
-                                      ),
-                                    ),
+                                        decoration: BoxDecoration(boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.7),
+                                            spreadRadius: 0,
+                                            blurRadius: 13,
+                                            offset: Offset(3,
+                                                10), // changes position of shadow
+                                          )
+                                        ]),
+                                        child: Image.asset(
+                                            'assets/BookCover.png')),
                                     subtitle: Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 5),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 15),
                                       child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -236,7 +231,8 @@ class DatabaseHelper {
   }
 
   Future _onCreate(Database db, int version) async {
-    await db.execute('''
+    await db.execute(
+        '''
       CREATE TABLE listBuku(
         id INTEGER PRIMARY KEY,
         name TEXT,
@@ -250,7 +246,8 @@ class DatabaseHelper {
         author TEXT
       )
     ''');
-    await db.execute('''
+    await db.execute(
+        '''
       INSERT INTO listBuku(name, statusPinjam, waktuDipinjam, waktuDikembalikan, tahunTerbit, sinopsis, jumlahPeminjam, stok, author)
       VALUES ('Buku 01', 0, '17-12-2022', '25-12-2022', 2010, 'Buku ini menceritakan tentang bla bla', 240, 1, 'abdul'), 
       ('Buku 02', 0, '18-12-2022', '26-12-2022', 2014, 'Tentang bla bla diceritakan oleh buku ini', 131, 2, 'budi'), 
