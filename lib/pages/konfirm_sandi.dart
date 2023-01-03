@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'otp.dart';
 
 class KonfirmSandi extends StatefulWidget {
-  const KonfirmSandi({super.key, required this.title});
-
-  final String title;
+  const KonfirmSandi({super.key});
 
   @override
   State<KonfirmSandi> createState() => _KonfirmSandiState();

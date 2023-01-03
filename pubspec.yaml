@@ -71,6 +71,7 @@ flutter:
     - assets/lock.png
     - assets/logo.png
     - assets/pass.png
+    - assets/about.png
     - assets/profil.png
     - assets/genre1.jpg
     - assets/genre2.jpg

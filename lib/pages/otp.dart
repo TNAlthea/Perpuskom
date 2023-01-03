@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:navbar_bottom/pages/navpages/genre_page.dart';
 // import 'package:navbar_bottom/pages/navpages/home_page.dart';
 // import 'package:navbar_bottom/pages/navpages/member_page.dart';
-// import 'package:navbar_bottom/pages/navpages/profile_page.dart';
+import 'package:perpuskom/pages/navpages/profile_page.dart';
 
 class OTPPage extends StatefulWidget {
   const OTPPage({Key? key}) : super(key: key);
@@ -78,7 +78,7 @@ class _OTPPageState extends State<OTPPage> {
                 padding: const EdgeInsets.fromLTRB(0.0, 165.0, 0.0, 0.0),
                 child: OutlinedButton(
                   onPressed: () {
-                    //   _navToOTP(context);
+                    _navToProfile(context);
                   },
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 180, 84, 82),
@@ -101,5 +101,11 @@ class _OTPPageState extends State<OTPPage> {
         ),
       ),
     );
+  }
+
+  // fungsi navigasi button masuk
+  void _navToProfile(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ProfilePage()));
   }
 }

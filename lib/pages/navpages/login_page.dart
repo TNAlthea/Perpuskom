@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:perpuskom/pages/navpages/otp.dart';
 import 'package:perpuskom/pages/navpages/lupa_pass.dart';
 import 'package:perpuskom/pages/navpages/profile_page.dart';
+import 'package:perpuskom/pages/navpages/regis_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -173,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  // _navToRegis(context);
+                                  _navToRegis(context);
                                 },
                                 child: Text(
                                   'Daftar',
@@ -230,9 +231,15 @@ class _LoginPageState extends State<LoginPage> {
         .push(MaterialPageRoute(builder: (context) => OTPPage()));
   }
 
-  // fungsi navigasi button
+  // fungsi navigasi button masuk
   void _navToProfile(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ProfilePage()));
+  }
+
+// fungsi hyperlink daftar
+  void _navToRegis(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => RegisPage()));
   }
 }
