@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'grafik.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'grafik.dart';
+import 'about_page.dart';
 
 final List<String> imgList = [
   'assets/carousel/1.png',
@@ -24,15 +25,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // color: Color.fromRGBO(255, 255, 255, 100),
-        width: 1080,
-        height: 1920,
         child: ListView(
           children: <Widget>[
             // selamat datang jumbotron
             Stack(alignment: Alignment.center, children: <Widget>[
               Container(
-                // padding: const EdgeInsets.all(0.0),
                 child: Image.asset(
                   'assets/jumbotron.png',
                   height: 185,
@@ -70,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 13)),
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _navToAbout(context);
+                    },
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
@@ -455,5 +454,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  // fungsi navigasi button masuk
+  void _navToAbout(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => AboutPage()));
   }
 }

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'otp.dart';
+import 'package:perpuskom/pages/navpages/otp.dart';
+import 'package:perpuskom/pages/navpages/lupa_pass.dart';
+import 'package:perpuskom/pages/navpages/profile_page.dart';
+import 'package:perpuskom/pages/navpages/regis_page.dart';
 
-class KonfirmSandi extends StatefulWidget {
-  const KonfirmSandi({super.key});
-
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
   @override
-  State<KonfirmSandi> createState() => _KonfirmSandiState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _KonfirmSandiState extends State<KonfirmSandi> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
                         BoxDecoration(color: Color.fromARGB(255, 46, 46, 51)),
                     child: Container(
                       child: Text(
-                        "Buat Akun",
+                        "Masuk",
                         style: TextStyle(
                             fontSize: 30.0,
                             color: Color.fromARGB(255, 255, 255, 255),
@@ -55,7 +57,7 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
                               padding:
                                   const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
                               child: Text(
-                                'Kata Sandi',
+                                'Email',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 180, 84, 82),
@@ -101,7 +103,7 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
                               padding:
                                   const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
                               child: Text(
-                                'Konfirmasi Kata Sandi',
+                                'Kata Sandi',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 180, 84, 82),
@@ -137,15 +139,63 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
                         ),
                       ),
 
-                      //
-                      // button selanjutnya
+                      // hyperlink lupa kata sandi
+                      Container(
+                          padding: EdgeInsets.fromLTRB(260.0, 15.0, 29.0, 0),
+                          height: 30,
+                          width: 45,
+                          child: InkWell(
+                            onTap: () {
+                              _navToLupaPass(context);
+                            },
+                            child: Text(
+                              'Lupa Kata Sandi?',
+                              style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  color: Color.fromARGB(255, 180, 84, 82),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          )),
+
+                      // hyperlink lupa kata sandi
+                      Container(
+                          padding: EdgeInsets.fromLTRB(115.0, 20.0, 115.0, 0),
+                          // height: 30,
+                          // width: 45,
+                          child: Row(
+                            children: [
+                              Text(
+                                'Belum punya akun?  ',
+                                style: TextStyle(
+                                    color: Color.fromARGB(190, 157, 178, 206),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  _navToRegis(context);
+                                },
+                                child: Text(
+                                  'Daftar',
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Color.fromARGB(255, 180, 84, 82),
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ],
+                          )),
+
+                      // button masuk
                       Container(
                         width: 350,
                         padding:
-                            const EdgeInsets.fromLTRB(29.0, 250.0, 29.0, 0.0),
+                            const EdgeInsets.fromLTRB(29.0, 120.0, 29.0, 0.0),
                         child: OutlinedButton(
                           onPressed: () {
-                            _navToOTP(context);
+                            _navToProfile(context);
                           },
                           style: OutlinedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 180, 84, 82),
@@ -154,7 +204,7 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
                             ),
                           ),
                           child: Text(
-                            "Selanjutnya",
+                            "Masuk",
                             style: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
@@ -169,9 +219,27 @@ class _KonfirmSandiState extends State<KonfirmSandi> {
         ));
   }
 
-// fungsi navigasi button
+// fungsi navigasi button lupa password
+  void _navToLupaPass(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => LupaPassPage()));
+  }
+
+  // fungsi navigasi button OTP
   void _navToOTP(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => OTPPage()));
+  }
+
+  // fungsi navigasi button masuk
+  void _navToProfile(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ProfilePage()));
+  }
+
+// fungsi hyperlink daftar
+  void _navToRegis(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => RegisPage()));
   }
 }

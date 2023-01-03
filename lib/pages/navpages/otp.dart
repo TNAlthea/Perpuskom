@@ -103,7 +103,7 @@ class _OTPPageState extends State<OTPPage> {
     );
   }
 
-  // fungsi navigasi button masuk
+  // fungsi navigasi button
   void _navToProfile(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ProfilePage()));
