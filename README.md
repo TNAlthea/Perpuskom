@@ -1,16 +1,5 @@
-# perpuskom
+# PerpusKom
 
-A new Flutter project.
+Online library application. Built using Flutter and MySQL
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Figma page: https://www.figma.com/file/FTZ4afl9QaL42kxgGw2WjY/perpustakaan?node-id=0%3A1&t=UssjP5qDskSC7vb6-1
